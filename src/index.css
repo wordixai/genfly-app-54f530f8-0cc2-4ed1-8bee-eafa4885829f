@@ -123,9 +123,3 @@
 .hover\:text-slate-12:hover { color: hsl(var(--slate-12)); }
 .hover\:shadow-slate-6:hover { box-shadow: 0 10px 15px -3px hsl(var(--slate-6) / 0.1); }
 .bg-green-3 { background-color: hsl(var(--green-3)); }
-
-/* Component variants */
-.group\/card { @apply group; }
-.group-hover\/card\:scale-105:hover .group\/card:hover * { transform: scale(1.05); }
-.group-hover\/card\:-translate-y-1:hover .group\/card:hover * { transform: translateY(-0.25rem); }
-.group-hover\/card\:text-slate-12:hover .group\/card:hover * { color: hsl(var(--slate-12)); }
