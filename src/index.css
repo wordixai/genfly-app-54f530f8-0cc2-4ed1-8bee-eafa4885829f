@@ -2,17 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* OpenRouter design system colors and styles */
 
 @layer base {
   :root {
-   
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    
+    /* OpenRouter specific colors */
+    --slate-1: 210 40% 98%;
+    --slate-3: 212 27.4% 84%;
+    --slate-4: 214 31.8% 91.4%;
+    --slate-6: 215 20.2% 65.1%;
+    --slate-7: 215.4 16.3% 46.9%;
+    --slate-10: 215.4 16.3% 46.9%;
+    --slate-11: 215.3 19.3% 34.5%;
+    --slate-12: 222.2 84% 4.9%;
+    --green-3: 142 76% 73%;
+    --green-10: 142 71% 45%;
+    --red-10: 0 84.2% 60.2%;
   }
 
   .dark {
-
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -25,3 +73,59 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom animations */
+@keyframes float0 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  50% { transform: translateY(-5px) rotate(-1deg); }
+  75% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes float1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(-2deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  75% { transform: translateY(-12px) rotate(-1deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(1deg); }
+  50% { transform: translateY(-18px) rotate(-2deg); }
+  75% { transform: translateY(-6px) rotate(2deg); }
+}
+
+@keyframes float3 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-12px) rotate(-1deg); }
+  50% { transform: translateY(-3px) rotate(2deg); }
+  75% { transform: translateY(-20px) rotate(-1deg); }
+}
+
+@keyframes float4 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(2deg); }
+  50% { transform: translateY(-10px) rotate(-1deg); }
+  75% { transform: translateY(-5px) rotate(1deg); }
+}
+
+/* Utility classes */
+.text-slate-11 { color: hsl(var(--slate-11)); }
+.text-slate-10 { color: hsl(var(--slate-10)); }
+.text-green-10 { color: hsl(var(--green-10)); }
+.text-red-10 { color: hsl(var(--red-10)); }
+.bg-slate-3 { background-color: hsl(var(--slate-3)); }
+.bg-slate-4 { background-color: hsl(var(--slate-4)); }
+.border-slate-6 { border-color: hsl(var(--slate-6)); }
+.border-slate-7 { border-color: hsl(var(--slate-7)); }
+.hover\:border-slate-7:hover { border-color: hsl(var(--slate-7)); }
+.hover\:text-slate-12:hover { color: hsl(var(--slate-12)); }
+.hover\:shadow-slate-6:hover { box-shadow: 0 10px 15px -3px hsl(var(--slate-6) / 0.1); }
+.bg-green-3 { background-color: hsl(var(--green-3)); }
+
+/* Component variants */
+.group\/card { @apply group; }
+.group-hover\/card\:scale-105:hover .group\/card:hover * { transform: scale(1.05); }
+.group-hover\/card\:-translate-y-1:hover .group\/card:hover * { transform: translateY(-0.25rem); }
+.group-hover\/card\:text-slate-12:hover .group\/card:hover * { color: hsl(var(--slate-12)); }

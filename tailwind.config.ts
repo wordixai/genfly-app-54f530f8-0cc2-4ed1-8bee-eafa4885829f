@@ -14,10 +14,14 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
-				'2xl': '1400px'
+				'2xl': '1400px',
+				'4xl': '1920px'
 			}
 		},
 		extend: {
+			maxWidth: {
+				'screen-4xl': '1920px',
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -84,11 +88,46 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				float0: {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'25%': { transform: 'translateY(-10px) rotate(2deg)' },
+					'50%': { transform: 'translateY(-5px) rotate(-1deg)' },
+					'75%': { transform: 'translateY(-15px) rotate(1deg)' }
+				},
+				float1: {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'25%': { transform: 'translateY(-15px) rotate(-2deg)' },
+					'50%': { transform: 'translateY(-8px) rotate(1deg)' },
+					'75%': { transform: 'translateY(-12px) rotate(-1deg)' }
+				},
+				float2: {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'25%': { transform: 'translateY(-8px) rotate(1deg)' },
+					'50%': { transform: 'translateY(-18px) rotate(-2deg)' },
+					'75%': { transform: 'translateY(-6px) rotate(2deg)' }
+				},
+				float3: {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'25%': { transform: 'translateY(-12px) rotate(-1deg)' },
+					'50%': { transform: 'translateY(-3px) rotate(2deg)' },
+					'75%': { transform: 'translateY(-20px) rotate(-1deg)' }
+				},
+				float4: {
+					'0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+					'25%': { transform: 'translateY(-20px) rotate(2deg)' },
+					'50%': { transform: 'translateY(-10px) rotate(-1deg)' },
+					'75%': { transform: 'translateY(-5px) rotate(1deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float0': 'float0 4s ease-in-out 0ms infinite',
+				'float1': 'float1 4s ease-in-out 150ms infinite',
+				'float2': 'float2 4s ease-in-out 300ms infinite',
+				'float3': 'float3 4s ease-in-out 450ms infinite',
+				'float4': 'float4 4s ease-in-out 600ms infinite'
 			}
 		}
 	},
